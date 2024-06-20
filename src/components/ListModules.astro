@@ -1,0 +1,91 @@
+---
+import AccountingIcon from "./Icons/AccountingIcon.astro";
+import AppointmentIcon from "./Icons/AppointmentIcon.astro";
+import BranchIcon from "./Icons/BranchIcon.astro";
+import EmployeeIcon from "./Icons/EmployeeIcon.astro";
+import InventoryIcon from "./Icons/InventoryIcon.astro";
+import PayrollIcon from "./Icons/PayrollIcon.astro";
+import ReviewsIcon from "./Icons/ReviewsIcon.astro";
+import UsersIcon from "./Icons/UsersIcon.astro";
+import WorkplaceIcon from "./Icons/WorkplaceIcon.astro";
+import ModuleCard from "./ModuleCard.astro";
+
+const MODULES = [
+  {
+    title: "Gestión de Sucursales (BM)",
+    description: "¡Expande tu negocio sin esfuerzo! Administra múltiples sucursales y mantén todo bajo control.",
+    pair: true,
+    icon: BranchIcon ,
+    url : '/modules/bm'
+  },
+  {
+    title: "Gestión de Empleados (EM)",
+    description: "Maximiza el rendimiento de tu equipo. Monitorea, motiva y mejora la eficiencia.",
+    pair: false,
+    icon: EmployeeIcon,
+    url : '/modules/em'
+  },
+  {
+    title: "Gestión de Planillas (PM)",
+    description: "Simplifica la administración de sueldos y bonos. Mantén a tu equipo satisfecho.",
+    pair: true,
+    icon: PayrollIcon,
+    url : '/modules/pm'
+  },
+  {
+    title: "Gestión de Inventario (IM)",
+    description: "Controla tu inventario en tiempo real. Evita faltantes y optimiza recursos.",
+    pair: false,
+    icon: InventoryIcon,
+    url : '/modules/im' 
+  },
+  {
+    title: "Gestión de Puestos de Trabajo (BWM)",
+    description: "Organiza tu espacio de trabajo y maximiza la productividad.",
+    pair: true,
+    icon: WorkplaceIcon,
+    url : '/modules/bwm' 
+  },
+  {
+    title: "Gestión de Finanzas (FM)",
+    description: "Lleva tus finanzas al siguiente nivel. Controla ingresos y gastos fácilmente.",
+    pair: false,
+    icon: AccountingIcon,
+    url : '/modules/fm' 
+  },
+  {
+    title: "Gestión de Citas (AM)",
+    description: "Facilita la programación y reduce no-shows. Mejora la experiencia del cliente.",
+    pair: true,
+    icon: AppointmentIcon,
+    url : '/modules/am' 
+  },
+  {
+    title: "Gestión de Usuarios Clientes (UCM)",
+    description: "Conoce a tus clientes y personaliza tu servicio. Fideliza y atrae más.",
+    pair: false,
+    icon: UsersIcon,
+    url : '/modules/ucm' 
+  },
+  {
+    title: "Gestión de Reseñas y Calificaciones (RRM)",
+    description: "Mejora tu reputación online. Responde a reseñas y destaca en el mercado.",
+    pair: true,
+    icon: ReviewsIcon,
+    url : '/modules/rrm' 
+  }
+];
+
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8" title="Click para ver los detalles">
+    {
+      MODULES.map((module) => (
+        <a href={module.url}>
+          <ModuleCard title={module.title} description={module.description} pair={module.pair}>
+              <module.icon class=" size-16 mx-auto"/>
+          </ModuleCard>
+        </a>
+      ))
+    }
+  </div>

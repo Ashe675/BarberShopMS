@@ -1,0 +1,34 @@
+---
+const ELEMENTS = [
+  {
+    title: "Interfaz Intuitiva",
+    description: "Fácil de usar para todo el equipo.",
+  },
+  {
+    title: "Seguridad de Datos",
+    description:
+      "Protección avanzada para la información de tus clientes y operaciones.",
+  },
+  {
+    title: "Soporte 24/7",
+    description: "Asistencia técnica disponible siempre que la necesites.",
+  },
+  {
+    title: "Integración Flexible",
+    description: "Compatible con diversas plataformas y dispositivos.",
+  },
+];
+---
+
+<div class="flex gap-4 flex-wrap justify-evenly pt-4">
+  {
+    ELEMENTS.map((element) => (
+      <div class="bg-primary text-sm p-4 size-[200px] rounded-full flex flex-col justify-center hover:scale-105 hover:shadow-2xl transition">
+        <span class="font-bold text-lg text-secondary block mb-2">
+          {element.title}
+        </span>{" "}
+        {element.description}
+      </div>
+    ))
+  }
+</div>

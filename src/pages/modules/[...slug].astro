@@ -1,0 +1,647 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const pages = [
+    {
+      slug: "bm",
+      title: "Branch Management (BM)",
+      description:
+        "Administra eficientemente todas tus sucursales desde una única plataforma. Agrega, edita y elimina sucursales fácilmente para mantener un control organizado de tu negocio.",
+      section1: {
+        titleSpanish: "Gestión de Sucursales",
+        description:
+          "¡Expande tu negocio sin esfuerzo! Administra múltiples sucursales y mantén todo bajo control con nuestro módulo de gestión de sucursales.",
+        functions: [
+          {
+            title: "Interfaz Intuitiva",
+            text: "Fácil de usar, permite agregar, editar y dar de baja sucursales rápidamente.",
+          },
+          {
+            title: "Control Organizado",
+            text: "Mantén un registro detallado de la información vital de cada sucursal, incluyendo empleados, contabilidad e inventario.",
+          },
+          {
+            title: "Expansión Simplificada",
+            text: "Facilita la expansión de tu negocio agregando nuevas sucursales con solo unos clics",
+          },
+          {
+            title: "Gestión Centralizada",
+            text: "Administra todas tus sucursales desde una única plataforma, optimizando tiempo y recursos.",
+          },
+        ],
+        img: "/sucursal.webp",
+      },
+      section2: {
+        description:
+          "Descubre cómo nuestro módulo de gestión de sucursales puede transformar la administración de tu barbería",
+        advantages: [
+          {
+            title: "Interfaz Intuitiva",
+            text: "Fácil de usar para todo el equipo, asegurando una rápida adaptación y eficiencia en las operaciones diarias.",
+          },
+          {
+            title: "Seguridad de Datos",
+            text: "Protección avanzada para la información de tus clientes y operaciones, garantizando la privacidad y seguridad de tus datos.",
+          },
+          {
+            title: "Soporte 24/7",
+            text: "Asistencia técnica disponible siempre que la necesites, asegurando que tu negocio nunca se detenga.",
+          },
+          {
+            title: "Integración Flexible",
+            text: "Compatible con diversas plataformas y dispositivos, facilitando la gestión desde cualquier lugar.",
+          },
+          {
+            title: "Control Centralizado",
+            text: "Administra todas tus sucursales desde una única plataforma, optimizando tiempo y recursos.",
+          },
+          {
+            title: "Expansión Simplificada",
+            text: "Permite agregar nuevas sucursales fácilmente, apoyando el crecimiento de tu negocio.",
+          },
+        ],
+      },
+    },
+    {
+      slug: "bwm",
+      title: "Barber Workplace Management (BWM)",
+      description:
+        "Administra eficientemente los puestos de trabajo en tu barbería. Asigna barberos e inventario a cada puesto y mantén un control organizado.",
+      section1: {
+        titleSpanish: "Gestión de Puestos de Trabajo",
+        description:
+          "¡Optimiza tu barbería! Gestiona los puestos de trabajo, asigna barberos e inventario y mantén un control detallado.",
+        functions: [
+          {
+            title: "Interfaz Intuitiva",
+            text: "Fácil de usar, permite agregar, editar y eliminar puestos de trabajo rápidamente.",
+          },
+          {
+            title: "Asignación de Barberos",
+            text: "Asigna barberos a los puestos de trabajo y actualiza las asignaciones según sea necesario.",
+          },
+          {
+            title: "Control de Inventario",
+            text: "Gestiona el inventario asociado a cada puesto de trabajo para asegurar un suministro adecuado de recursos.",
+          },
+          {
+            title: "Gestión Centralizada",
+            text: "Administra todos los puestos de trabajo desde una única plataforma, optimizando tiempo y recursos.",
+          },
+        ],
+        img: "/puestos_de_trabajo.webp",
+      },
+      section2: {
+        description:
+          "Descubre cómo nuestro módulo de gestión de puestos de trabajo puede optimizar la administración de tu barbería.",
+        advantages: [
+          {
+            title: "Monitoreo Eficiente",
+            text: "Monitorea el uso del inventario y la asignación de barberos en tiempo real.",
+          },
+          {
+            title: "Asignación Flexible",
+            text: "Permite reasignar barberos e inventario fácilmente según las necesidades del negocio.",
+          },
+          {
+            title: "Integración Completa",
+            text: "Se integra perfectamente con los módulos de gestión de barberos e inventario para una administración fluida.",
+          },
+          {
+            title: "Control Detallado",
+            text: "Mantén un registro detallado de cada puesto de trabajo, incluyendo empleados e inventario.",
+          },
+          {
+            title: "Operaciones Eficientes",
+            text: "Asegura que todos los puestos de trabajo estén completamente abastecidos y operativos.",
+          },
+          {
+            title: "Expansión Simplificada",
+            text: "Facilita la creación de nuevos puestos de trabajo y la expansión de tu negocio.",
+          },
+        ],
+      },
+    },
+    {
+      slug: "im",
+      title: "Inventory Management (IM)",
+      description:
+        "Gestiona tu inventario de manera eficiente. Controla tus productos y suministros para evitar faltantes y sobrestock.",
+      section1: {
+        titleSpanish: "Gestión de Inventario",
+        description:
+          "¡Nunca más te quedes sin suministros! Mantén un control preciso de tu inventario y asegúrate de tener siempre lo que necesitas.",
+        functions: [
+          {
+            title: "Control de Stock",
+            text: "Registra entradas y salidas de productos en tiempo real para evitar faltantes.",
+          },
+          {
+            title: "Alertas Automáticas",
+            text: "Recibe notificaciones cuando el stock de algún producto esté bajo.",
+          },
+          {
+            title: "Reportes Detallados",
+            text: "Genera reportes de inventario para tomar decisiones informadas.",
+          },
+          {
+            title: "Gestión de Proveedores",
+            text: "Mantén un registro de tus proveedores y gestiona tus órdenes de compra fácilmente.",
+          },
+        ],
+        img: "/inventario.webp",
+      },
+      section2: {
+        description:
+          "Asegura la disponibilidad de tus productos esenciales con nuestro módulo de gestión de inventario.",
+        advantages: [
+          {
+            title: "Eficiencia en el Control de Stock",
+            text: "Controla y gestiona tu inventario de forma eficiente, evitando faltantes y excesos de stock.",
+          },
+          {
+            title: "Optimización de Recursos",
+            text: "Optimiza la gestión de tus recursos y reduce pérdidas por productos no utilizados.",
+          },
+          {
+            title: "Visibilidad Total",
+            text: "Obtén una visión completa y detallada de tu inventario en cualquier momento.",
+          },
+          {
+            title: "Gestión Simplificada",
+            text: "Simplifica la gestión de tus productos y suministros, permitiéndote centrarte en el servicio a tus clientes.",
+          },
+          {
+            title: "Reportes Personalizados",
+            text: "Crea reportes personalizados para analizar el rendimiento de tu inventario.",
+          },
+          {
+            title: "Integración con Proveedores",
+            text: "Mantén una relación fluida con tus proveedores y gestiona tus pedidos de manera eficiente.",
+          },
+        ],
+      },
+    },
+    {
+      slug: "em",
+      title: "Employee Management (EM)",
+      description:
+        "Administra tu equipo de trabajo de manera eficiente. Asigna roles, gestiona horarios y supervisa el desempeño.",
+      section1: {
+        titleSpanish: "Gestión de Empleados",
+        description:
+          "¡Motiva a tu equipo y mejora la productividad! Gestiona horarios, roles y rendimiento de manera eficiente.",
+        functions: [
+          {
+            title: "Asignación de Roles",
+            text: "Define y asigna roles específicos a cada miembro del equipo.",
+          },
+          {
+            title: "Gestión de Horarios",
+            text: "Crea y administra horarios de trabajo de manera sencilla.",
+          },
+          {
+            title: "Evaluación de Desempeño",
+            text: "Realiza seguimientos y evaluaciones periódicas del desempeño de tus empleados.",
+          },
+          {
+            title: "Comunicación Interna",
+            text: "Facilita la comunicación entre los miembros del equipo con herramientas integradas.",
+          },
+        ],
+        img: "/empleados.webp",
+      },
+      section2: {
+        description:
+          "Mejora la gestión de tu equipo y aumenta la productividad con nuestro módulo de gestión de empleados.",
+        advantages: [
+          {
+            title: "Organización Eficiente",
+            text: "Organiza y gestiona tu equipo de trabajo de manera eficiente, mejorando la productividad.",
+          },
+          {
+            title: "Control de Asistencia",
+            text: "Registra y controla la asistencia de tus empleados de forma precisa.",
+          },
+          {
+            title: "Motivación y Desempeño",
+            text: "Motiva a tu equipo mediante evaluaciones y seguimiento de desempeño.",
+          },
+          {
+            title: "Comunicación Clara",
+            text: "Facilita una comunicación clara y fluida entre los miembros del equipo.",
+          },
+          {
+            title: "Optimización de Horarios",
+            text: "Optimiza la gestión de horarios y turnos, evitando conflictos y mejorando la satisfacción del equipo.",
+          },
+          {
+            title: "Reportes de Desempeño",
+            text: "Genera reportes detallados sobre el desempeño de tus empleados para tomar decisiones informadas.",
+          },
+        ],
+      },
+    },
+    {
+      slug: "pm",
+      title: "Payroll Management (PM)",
+      description:
+        "Simplifica la gestión de las nóminas de tu equipo. Calcula salarios, bonificaciones y deducciones automáticamente.",
+      section1: {
+        titleSpanish: "Gestión de Nóminas",
+        description:
+          "¡Paga a tu equipo sin complicaciones! Simplifica el cálculo de salarios y deducciones con nuestro módulo de gestión de nóminas.",
+        functions: [
+          {
+            title: "Cálculo Automático de Salarios",
+            text: "Calcula salarios y deducciones de manera automática y precisa.",
+          },
+          {
+            title: "Gestión de Bonificaciones",
+            text: "Administra bonificaciones y otros beneficios de manera eficiente.",
+          },
+          {
+            title: "Reportes de Nómina",
+            text: "Genera reportes detallados de nómina para mantener un control financiero.",
+          },
+          {
+            title: "Cumplimiento Legal",
+            text: "Asegura el cumplimiento de todas las normativas legales en materia de pago de nóminas.",
+          },
+        ],
+        img: "/nominas.webp",
+      },
+      section2: {
+        description:
+          "Optimiza la gestión de las nóminas y reduce errores con nuestro módulo especializado.",
+        advantages: [
+          {
+            title: "Precisión en Pagos",
+            text: "Asegura pagos precisos y puntuales, reduciendo errores y mejorando la satisfacción del equipo.",
+          },
+          {
+            title: "Ahorro de Tiempo",
+            text: "Simplifica el proceso de cálculo de nóminas, ahorrando tiempo y recursos.",
+          },
+          {
+            title: "Cumplimiento Normativo",
+            text: "Garantiza el cumplimiento de las normativas laborales y fiscales, evitando sanciones.",
+          },
+          {
+            title: "Transparencia Financiera",
+            text: "Mantén una transparencia financiera con reportes detallados de nómina.",
+          },
+          {
+            title: "Gestión de Beneficios",
+            text: "Administra bonificaciones, comisiones y otros beneficios de forma eficiente.",
+          },
+          {
+            title: "Soporte Continuo",
+            text: "Accede a soporte continuo para resolver cualquier duda o problema relacionado con la gestión de nóminas.",
+          },
+        ],
+      },
+    },
+    {
+      slug: "ucm",
+      title: "User Customer Management (UCM)",
+      description:
+        "Ofrece un servicio personalizado a tus clientes. Gestiona sus datos, preferencias y citas desde una única plataforma.",
+      section1: {
+        titleSpanish: "Gestión de Clientes",
+        description:
+          "¡Conoce mejor a tus clientes! Gestiona datos, preferencias y citas para ofrecer un servicio personalizado y de calidad.",
+        functions: [
+          {
+            title: "Registro de Clientes",
+            text: "Almacena y gestiona la información de tus clientes de manera segura.",
+          },
+          {
+            title: "Preferencias Personalizadas",
+            text: "Registra y accede a las preferencias y necesidades de cada cliente.",
+          },
+          {
+            title: "Gestión de Citas",
+            text: "Agenda, modifica y cancela citas fácilmente desde una única plataforma.",
+          },
+          {
+            title: "Historial de Servicios",
+            text: "Lleva un registro detallado del historial de servicios de cada cliente.",
+          },
+        ],
+        img: "/clientes.webp",
+      },
+      section2: {
+        description:
+          "Ofrece un servicio excepcional y fideliza a tus clientes con nuestro módulo de gestión de clientes.",
+        advantages: [
+          {
+            title: "Servicio Personalizado",
+            text: "Ofrece un servicio personalizado a cada cliente, aumentando su satisfacción y fidelidad.",
+          },
+          {
+            title: "Gestión Eficiente de Citas",
+            text: "Administra citas de manera eficiente, evitando conflictos y mejorando la organización.",
+          },
+          {
+            title: "Conocimiento del Cliente",
+            text: "Conoce mejor a tus clientes y sus preferencias para ofrecer un servicio superior.",
+          },
+          {
+            title: "Historial Detallado",
+            text: "Accede a un historial detallado de servicios y preferencias de cada cliente.",
+          },
+          {
+            title: "Mejora de la Experiencia",
+            text: "Mejora la experiencia del cliente con un servicio más eficiente y personalizado.",
+          },
+          {
+            title: "Seguridad de Datos",
+            text: "Asegura la protección de los datos de tus clientes con medidas de seguridad avanzadas.",
+          },
+        ],
+      },
+    },
+    {
+      slug: "rrm",
+      title: "Review and Raiting Management (RRM)",
+      description:
+        "Gestiona las reseñas y calificaciones de tus clientes. Responde a comentarios y mejora la reputación de tu negocio.",
+      section1: {
+        titleSpanish: "Gestión de Reseñas",
+        description:
+          "¡Construye una excelente reputación en línea! Gestiona y responde a las reseñas de tus clientes para mejorar la imagen de tu negocio.",
+        functions: [
+          {
+            title: "Monitoreo de Reseñas",
+            text: "Monitorea todas las reseñas y calificaciones en tiempo real.",
+          },
+          {
+            title: "Respuesta Rápida",
+            text: "Responde a las reseñas de tus clientes de manera oportuna y profesional.",
+          },
+          {
+            title: "Análisis de Sentimiento",
+            text: "Analiza el sentimiento de las reseñas para identificar áreas de mejora.",
+          },
+          {
+            title: "Reportes de Reseñas",
+            text: "Genera reportes detallados de reseñas y calificaciones para tomar decisiones informadas.",
+          },
+        ],
+        img: "/resenas.webp",
+      },
+      section2: {
+        description:
+          "Mejora la reputación de tu barbería y atrae a más clientes con nuestro módulo de gestión de reseñas.",
+        advantages: [
+          {
+            title: "Reputación en Línea",
+            text: "Construye y mantiene una excelente reputación en línea respondiendo a las reseñas de tus clientes.",
+          },
+          {
+            title: "Feedback Valioso",
+            text: "Obtén feedback valioso de tus clientes para mejorar tu servicio.",
+          },
+          {
+            title: "Análisis de Sentimiento",
+            text: "Analiza el sentimiento de las reseñas para entender mejor la percepción de tus clientes.",
+          },
+          {
+            title: "Monitoreo Continuo",
+            text: "Monitorea y gestiona todas las reseñas y calificaciones en tiempo real.",
+          },
+          {
+            title: "Mejora Continua",
+            text: "Utiliza el feedback de las reseñas para implementar mejoras continuas en tu servicio.",
+          },
+          {
+            title: "Reportes Detallados",
+            text: "Genera reportes detallados para analizar el rendimiento de tu barbería en términos de satisfacción del cliente.",
+          },
+        ],
+      },
+    },
+    {
+      slug: "am",
+      title: "Appointment Management (AM)",
+      description:
+        "Organiza tu agenda de manera eficiente. Gestiona citas y horarios de trabajo para maximizar la productividad.",
+      section1: {
+        titleSpanish: "Gestión de Citas",
+        description:
+          "¡Optimiza tu tiempo y el de tu equipo! Gestiona citas y horarios de trabajo de manera eficiente para mejorar la productividad.",
+        functions: [
+          {
+            title: "Agenda Integrada",
+            text: "Gestiona todas las citas y horarios desde una única plataforma.",
+          },
+          {
+            title: "Recordatorios Automáticos",
+            text: "Envía recordatorios automáticos a tus clientes para reducir ausencias.",
+          },
+          {
+            title: "Sincronización de Calendarios",
+            text: "Sincroniza tu agenda con otras aplicaciones de calendario.",
+          },
+          {
+            title: "Gestión de Disponibilidad",
+            text: "Administra la disponibilidad de tu equipo de manera sencilla.",
+          },
+        ],
+        img: "/citas.webp",
+      },
+      section2: {
+        description:
+          "Maximiza la productividad de tu barbería gestionando citas y horarios de manera eficiente con nuestro módulo especializado.",
+        advantages: [
+          {
+            title: "Organización de Citas",
+            text: "Organiza todas tus citas de manera eficiente, evitando conflictos y mejorando la gestión del tiempo.",
+          },
+          {
+            title: "Reducción de Ausencias",
+            text: "Envía recordatorios automáticos para reducir las ausencias y cancelaciones de última hora.",
+          },
+          {
+            title: "Sincronización Fácil",
+            text: "Sincroniza tu agenda con otras aplicaciones de calendario para una gestión más integrada.",
+          },
+          {
+            title: "Mejora de la Productividad",
+            text: "Optimiza los horarios de trabajo para maximizar la productividad de tu equipo.",
+          },
+          {
+            title: "Visibilidad Completa",
+            text: "Obtén una visión completa y detallada de tu agenda en cualquier momento.",
+          },
+          {
+            title: "Flexibilidad en la Gestión",
+            text: "Administra la disponibilidad de tu equipo de manera flexible y sencilla.",
+          },
+        ],
+      },
+    },
+    {
+      slug: "fm",
+      title: "Financial Management (FM)",
+      description:
+        "Mantén tus finanzas bajo control. Gestiona ingresos, gastos y genera reportes financieros detallados.",
+      section1: {
+        titleSpanish: "Gestión Financiera",
+        description:
+          "¡Lleva el control de tus finanzas con facilidad! Gestiona ingresos, gastos y obtén reportes financieros detallados para tomar decisiones informadas.",
+        functions: [
+          {
+            title: "Registro de Ingresos y Gastos",
+            text: "Lleva un registro detallado de todos los ingresos y gastos de tu barbería.",
+          },
+          {
+            title: "Reportes Financieros",
+            text: "Genera reportes financieros para analizar el rendimiento económico de tu negocio.",
+          },
+          {
+            title: "Presupuestos",
+            text: "Crea y gestiona presupuestos para controlar tus finanzas de manera efectiva.",
+          },
+          {
+            title: "Análisis de Rentabilidad",
+            text: "Analiza la rentabilidad de tu barbería y toma decisiones basadas en datos.",
+          },
+        ],
+        img: "/finanzas.webp",
+      },
+      section2: {
+        description:
+          "Optimiza la gestión financiera de tu barbería y toma decisiones informadas con nuestro módulo especializado.",
+        advantages: [
+          {
+            title: "Control Financiero",
+            text: "Lleva un control preciso de tus finanzas, gestionando ingresos y gastos de manera eficiente.",
+          },
+          {
+            title: "Análisis Económico",
+            text: "Obtén reportes financieros detallados para analizar el rendimiento económico de tu negocio.",
+          },
+          {
+            title: "Gestión de Presupuestos",
+            text: "Crea y gestiona presupuestos para controlar tus gastos y optimizar tus recursos.",
+          },
+          {
+            title: "Decisiones Basadas en Datos",
+            text: "Toma decisiones informadas basadas en datos financieros precisos y actualizados.",
+          },
+          {
+            title: "Visibilidad Financiera",
+            text: "Obtén una visión completa y detallada de la situación financiera de tu barbería en cualquier momento.",
+          },
+          {
+            title: "Rentabilidad Mejorada",
+            text: "Analiza la rentabilidad de tu barbería y aplica estrategias para mejorarla continuamente.",
+          },
+        ],
+      },
+    },
+  ];
+  return pages.map(({ slug, title, description, section1, section2 }) => {
+    return {
+      params: { slug },
+      props: { title, description, section1, section2 },
+    };
+  });
+}
+const { title, description, section1, section2 } = Astro.props;
+---
+
+<Layout title={title}>
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate__animated animate__fadeInDown"
+  >
+    <div
+      class="p-4 flex items-center flex-col justify-center md:h-96 h-72 xl:h-[420px]"
+    >
+      <h1
+        class="font-black text-4xl sm:text-5xl md:text-6xl text-center text-primary"
+      >
+        {title}
+      </h1>
+      <p class="text-lg mb-8">
+        {description}
+      </p>
+    </div>
+  </div>
+
+  <section class="container mx-auto p-6 bg-white rounded-lg shadow-lg my-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div
+        class="flex flex-col justify-center animate__animated animate__fadeInLeft"
+      >
+        <h2 class="text-4xl font-bold text-primary mb-4">
+          {section1.titleSpanish}
+        </h2>
+        <p class="text-lg mb-6 text-tertiary">
+          {section1.description}
+        </p>
+        <ul class="list-disc list-inside text-lg space-y-2">
+          {
+            section1.functions.map((fun) => (
+              <li class=" text-tertiary">
+                <span class="font-bold text-primary">{fun.title}:</span>{" "}
+                {fun.text}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div
+        class="flex justify-center items-center animate__animated animate__fadeInRight"
+      >
+        <img
+          src={section1.img}
+          alt={section1.titleSpanish}
+          class="rounded-lg shadow-lg w-full"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="more-info"
+    class="container mx-auto p-6 bg-white rounded-lg shadow-lg my-10 animate__animated animate__fadeInUp"
+  >
+    <h2 class="text-3xl font-bold text-primary mb-4">
+      Más Funcionalidades y Ventajas
+    </h2>
+    <p class="text-lg mb-6 text-secondary">
+      {section2.description}
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        section2.advantages.map((adv) => (
+          <div class="bg-tertiary text-white p-6 rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-xl">
+            <h3 class="text-xl font-bold mb-2">{adv.title}</h3>
+            <p>{adv.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Llamada a la accion -->
+  <section class="py-16 animate__animated animate__fadeInUp bg-primary/90">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-bold mb-8">
+        Empieza a Optimizar Tu Negocio Hoy
+      </h2>
+      <p class="text-lg mb-8">
+        Elige el plan perfecto para tu barbería y transforma tu gestión.
+      </p>
+      <a
+        href="/#planes"
+        class="bg-secondary text-white font-bold rounded-lg px-6 py-3 hover:bg-opacity-80 transition duration-150 ease-in-out"
+        >Ver Planes de Suscripción</a
+      >
+    </div>
+  </section>
+</Layout>

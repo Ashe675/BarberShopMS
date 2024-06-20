@@ -1,0 +1,104 @@
+---
+import Moustache from "../components/Icons/Moustache.astro";
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import BenefitCard from "../components/BenefitCard.astro";
+import ListModules from "../components/ListModules.astro";
+import BubbleList from "../components/BubbleList.astro";
+import SuscriptionsList from "../components/SuscriptionsList.astro";
+import Button from "../components/Button.astro";
+import Contact from "../components/Contact.astro";
+---
+
+<Layout title="Barbershop Management System">
+  <div class=" back w-full absolute opacity-40 -z-10 md:h-96 h-64 xl:h-[420px] ">
+  </div>
+  <main class="container mx-auto">
+    <div
+      class="p-4 flex items-center flex-col justify-center md:h-96 h-60 xl:h-[420px]"
+    >
+      <Moustache class="w-40 text-primary" />
+      <h1 class="font-black text-4xl md:text-6xl text-center text-primary">
+        BarberShop Management System
+      </h1>
+    </div>
+    <div>
+      <Section
+        title="¡Transforma la Gestión de tu Barbería con Nuestro Software Innovador!"
+        description="Transforma la gestión de tu barbería con BSMS, la solución SaaS diseñada para optimizar cada aspecto de tu negocio, desde la administración de sucursales hasta la satisfacción del cliente. Nuestra plataforma intuitiva y potente está diseñada para adaptarse a tus necesidades, ya sea que gestiones una pequeña barbería local o una cadena de renombre."
+        className="bg-tertiary text-white xl:mt-0"
+      >
+        <div class=" pt-10">
+			<Button tag="Planes" link="#planes"/>
+		</div>
+      </Section>
+      <h2
+        class="sm:mt-10 text-3xl md:text-4xl font-bold text-center text-white p-10"
+      >
+        Optimiza tus operaciones, aumenta tus ingresos y mejora la satisfacción
+        de tus clientes.
+      </h2>
+
+      <Section
+        title="Una Herramienta Potente y Fácil de Usar"
+        className="bg-tertiary text-white"
+      >
+        <BubbleList />
+      </Section>
+
+      <section class="w-full p-4 sm:mt-10 bg-white">
+        <h2 class="md:text-5xl text-4xl font-bold text-tertiary text-center">
+          Beneficios para Tu Negocio
+        </h2>
+        <div class="flex flex-wrap justify-center gap-2 items-center">
+          <BenefitCard
+            tag="Optimización Operativa"
+            description="Simplifica tareas administrativas para que puedas centrarte en ofrecer un excelente servicio."
+            img="optimizacion.webp"
+          />
+          <BenefitCard
+            tag="Crecimiento Escalable"
+            description="Desde una única barbería hasta una cadena de sucursales, BSMS crece contigo."
+            img="escalabilidad.webp"
+          />
+          <BenefitCard
+            tag="Experiencia del Cliente Mejorada"
+            description="Ofrece un servicio más eficiente y personalizado que mantiene a los clientes regresando."
+            img="satisfaccion.webp"
+          />
+          <BenefitCard
+            tag="Visibilidad y Control en Tiempo Real"
+            description="Monitorea y gestiona todos los aspectos de tu barbería en tiempo real desde cualquier dispositivo."
+            img="monitorea.webp"
+          />
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section id="features" class="container mx-auto py-16 px-2">
+        <h2 class="text-3xl font-bold text-center mb-8">
+          Funcionalidades que Transformarán tu Negocio
+        </h2>
+        <ListModules />
+      </section>
+
+      <SuscriptionsList/>
+
+	  <Contact/>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .curved-text path {
+    fill: none;
+    stroke: transparent;
+  }
+
+  .back {
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-position: 0px -20px;
+    background-repeat: no-repeat;
+  }
+</style>

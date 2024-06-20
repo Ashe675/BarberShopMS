@@ -1,0 +1,18 @@
+---
+interface Props {
+    tag : string
+    img: string
+    description : string
+}
+
+const {tag, img, description} = Astro.props
+---
+
+<div class=" p-8  rounded-sm flex flex-col justify-between items-center min-w-[250px] max-w-[350px] gap-2 ">
+    <h3 class=" text-tertiary font-semibold text-2xl text-center px-6">{tag}</h3>
+    <div class=" relative">
+        <img src={img} alt="Imagen que representa la optimización operativa" class=" w-full mx-auto">
+        <div class=" w-full mx-auto left-0 right-0 h-full bg-secondary/20 absolute top-0"></div>
+    </div>
+    <p class="text-tertiary text-center">{description}</p>
+</div>

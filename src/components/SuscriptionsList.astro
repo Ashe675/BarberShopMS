@@ -1,0 +1,65 @@
+---
+import Button from "./Button.astro";
+import PlanCard from "./PlanCard.astro";
+
+const planes = [
+  {
+    plan: "Plan Básico",
+    price: "$29/mes",
+    description: "Para pequeñas barberías.",
+    modules: [
+      "Gestión de Citas",
+      "Gestión de Inventario",
+      "Gestión de Reseñas y Calificaciones"
+    ]
+  },
+  {
+    plan: "Plan Avanzado",
+    price: "$59/mes",
+    description: "Para barberías medianas.",
+    modules: [
+      "Todos los beneficios del Plan Básico",
+      "Gestión de Empleados",
+      "Gestión de Planillas",
+      "Gestión de Puestos de Trabajo"
+    ]
+  },
+  {
+    plan: "Plan Premium",
+    price: "$99/mes",
+    description: "Para grandes cadenas.",
+    modules: [
+      "Todos los beneficios del Plan Avanzado",
+      "Gestión de Sucursales",
+      "Gestión Contable",
+      "Gestión de Usuarios Clientes"
+    ]
+  }
+];
+---
+
+<div id='planes' class="bg-tertiary py-8 px-4 sm:px-6 lg:px-8 sm:mb-10">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">
+      Planes de Suscripción
+    </h2>
+
+    <div class="flex flex-col md:flex-row gap-4">
+      {planes.map(plan => (
+        <PlanCard plan={plan.plan} description={plan.description} price={plan.price} modules={plan.modules}/>
+      ))}
+    </div>
+   <div class="flex-1 flex flex-col justify-between bg-white text-secondary rounded-lg p-6 mt-5">
+    <p class="text-center mt-8 text-xl">
+      ¡También puedes personalizar tu plan con los módulos que desees!
+    </p>
+    <div class=" flex justify-center mt-5">
+      <Button link="/#contact" tag="Contáctanos Para Personalizar Plan" />
+    </div>
+   </div>
+    
+    <p class="text-center mt-8 text-xl">
+      ¡Elige el plan perfecto para tu barbería y transforma tu gestión hoy mismo!
+    </p>
+  </div>
+</div>
